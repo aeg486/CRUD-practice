@@ -1,4 +1,4 @@
-file_name = "c:/users/andrew/desktop/crud-practice/data/products.csv"
+file_name = "data/products.csv"
 with open(file_name, "r") as file:
     prod_ct = file.read()
     lines = prod_ct.split("\n")
@@ -9,7 +9,7 @@ print("PRODUCTS APPLICATION")
 print("----------------------------------")
 print("Welome @aeg486!")
 print("")
-print("There are ", len(lines) - 2, " products in the database")
+print("There are", len(lines) - 2, "products in the database")
 print("")
 print("Operation  |  Description")
 print("---------- | ----------------------")
@@ -21,17 +21,23 @@ print(" 'Destroy' | Delete an existing product.")
 print("")
 
 user_input = "Please choose an operation from the list above: "
-user_op = input(user_input)
+user_op = input(user_input).title()
 
-if user_op.title() == "List":
+def list_prod():
     print("LISTING PRODUCTS")
-elif user_op.title() == "Show":
+def show_prod():
     print("SHOWING PRODUCTS")
-elif user_op.title() == "Create":
+def edit_list():
     print("CREATING PRODUCTS")
-elif user_op.title() == "Update":
+def updt_list():
     print("UPDATING PRODUCTS")
-elif user_op.title() == "Destroy":
+def term_prod():
     print("DESTROYING PRODUCTS")
+
+if user_op == "List": list_prod()
+elif user_op == "Show": show_prod()
+elif user_op == "Create": edit_list()
+elif user_op == "Update": updt_list()
+elif user_op == "Destroy": term_prod()
 else:
     print("Invalid input. Please try again.")
