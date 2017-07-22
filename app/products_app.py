@@ -1,4 +1,5 @@
 import csv
+import re
 file_name = "data/products.csv"
 
 with open(file_name, "r") as file:
@@ -6,7 +7,6 @@ with open(file_name, "r") as file:
     count = 0
     for row in reader:
         count += 1
-
 
 print("----------------------------------")
 print("PRODUCTS APPLICATION")
@@ -64,3 +64,30 @@ with open(file_name, "r") as file:
     for row in reader:
         count += 1
     print(count)
+
+# Write some random content to a temporary file
+
+test = "data/test_me.csv"
+with open(test, "w") as file:
+    content = "Hello, World!"
+    file.write(content)
+
+# Read the existing inventory and write to a separate, temporary file
+
+write_test = "data/write-me.csv"
+with open(file_name, "r") as file:
+    reader = csv.DictReader(file)
+    with open(write_test, "w") as file:
+        for row in reader:
+            file.write(row["name"] + "\n")
+
+# Read existing inventory and overwrite that file with its original contents
+
+column = ["id", "name", "aisle", "department", "price"]
+with open(file_name, "r+") as file:
+    text = file.read()
+    text = re.sub(text, text, text)
+    file.seek(0)
+    file.write(text)
+    file.truncate()
+    file.close()
