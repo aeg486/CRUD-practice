@@ -2,8 +2,8 @@
 
 This application has the following core functionality related to updated a grocery store's inventory list:
 
-List    | Display a list of product identifiers and names
-Show    | Show information about a product
+List    | Display a list of product identifiers and names, "\n"
+Show    | Show information about a product, \n"
 Create  | Add a new product
 Update  | Edit an existing product
 Destroy | Delete an existing product
