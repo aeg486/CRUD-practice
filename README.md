@@ -1,20 +1,26 @@
-# Name of Your App
+# Product Inventory Management Application
 
-Some description or other info about what the app does.
+This application has the following core functionality related to updated a grocery store's inventory list:
+
+List    | Display a list of product identifiers and names
+Show    | Show information about a product
+Create  | Add a new product
+Update  | Edit an existing product
+Destroy | Delete an existing product
+End     | Complete changes and update inventory
+
 
 ## Installation
 
 Download the source code:
 
-```shell
-git clone remote_clone_address_of_your_repo_here
-cd some/path/to/repo/
-```
+git clone https://github.com/aeg486/CRUD-practice.git
+cd some/path/to/crud-practice
 
-Finally, download the [example `products.csv` file](https://raw.githubusercontent.com/prof-rossetti/nyu-info-2335-70-201706/master/projects/crud-app/products.csv) and save it as `data/products.csv`.
+Download the example products.csv file and save it as data/products.csv in the downloaded folder.
 
 ## Usage
 
-```shell
+Run the app via the command line in Windows as:
+
 python app/products_app.py
-```
